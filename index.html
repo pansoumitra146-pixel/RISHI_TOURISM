@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10251f">
+  <meta name="description" content="Discover the beauty, culture and destinations of West Bengal with Rishi Tourism.">
+  <title>Rishi Tourism | Discover West Bengal</title>
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+  <a href="#" class="brand">
+    <span class="brand-icon">R</span>
+    <span>RISHI<span class="brand-light"> TOURISM</span></span>
+  </a>
+
+  <nav class="nav-links" id="navLinks">
+    <a href="#home">Home</a>
+    <a href="#destinations">Destinations</a>
+    <a href="#experiences">Experiences</a>
+    <a href="#about">About</a>
+  </nav>
+
+  <div class="nav-actions">
+    <button class="nav-plan" onclick="document.querySelector('#planner').scrollIntoView({behavior:'smooth'})">Plan a Trip ↗</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="eyebrow"><span class="live-dot"></span> EXPLORE THE LAND OF STORIES</span>
+      <h1>Find your own<br><em>West Bengal.</em></h1>
+      <p>From the mighty Himalayas to the mysterious mangroves. Discover extraordinary places, cultures and experiences.</p>
+      <div class="hero-buttons">
+        <a href="#destinations" class="btn-primary">Explore destinations <span>↗</span></a>
+        <a href="#experiences" class="btn-glass">Discover experiences</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>23+</strong><span>Districts</span></div>
+        <div><strong>100+</strong><span>Stories to explore</span></div>
+        <div><strong>1</strong><span>Incredible Bengal</span></div>
+      </div>
+    </div>
+    <div class="hero-bottom">22°34' N &nbsp; 88°22' E <span>WEST BENGAL, INDIA</span></div>
+  </section>
+
+  <section class="search-section">
+    <div class="search-box">
+      <div class="search-label">DISCOVER YOUR NEXT DESTINATION</div>
+      <div class="search-row">
+        <span class="search-icon">⌕</span>
+        <input id="searchInput" type="search" placeholder="Search places, destinations, experiences...">
+        <button id="searchButton">Explore ↗</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section intro-section" id="about">
+    <div class="section-kicker">A WORLD WITHIN A STATE</div>
+    <div class="intro-grid">
+      <h2>More than a destination.<br><em>A feeling.</em></h2>
+      <div>
+        <p>Welcome to West Bengal — where the mountains meet the sea, where ancient heritage meets modern life, and every journey has a story waiting to unfold.</p>
+        <a class="text-link" href="#destinations">Discover Bengal <span>↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section destinations-section" id="destinations">
+    <div class="section-heading">
+      <div>
+        <div class="section-kicker">CURATED FOR YOUR JOURNEY</div>
+        <h2>Explore <em>destinations.</em></h2>
+        <p>Handpicked places across the beautiful landscapes of Bengal.</p>
+      </div>
+      <a href="#destinations" class="text-link desktop-link">All destinations ↗</a>
+    </div>
+
+    <div class="category-list" id="categoryList">
+      <button class="category active" data-category="All">All places</button>
+      <button class="category" data-category="Mountains">Mountains</button>
+      <button class="category" data-category="Heritage">Heritage</button>
+      <button class="category" data-category="Nature">Nature</button>
+      <button class="category" data-category="Beaches">Beaches</button>
+      <button class="category" data-category="Spiritual">Spiritual</button>
+    </div>
+
+    <div class="destination-grid" id="destinationGrid"></div>
+    <div class="empty-state" id="emptyState" hidden>No destinations found. Try another search.</div>
+  </section>
+
+  <section class="experience-section" id="experiences">
+    <div class="experience-image"></div>
+    <div class="experience-content">
+      <div class="section-kicker">TRAVEL BEYOND THE ORDINARY</div>
+      <h2>Every journey<br>has a <em>different story.</em></h2>
+      <p>Watch the sunrise over the Himalayas. Walk through centuries of history. Explore the world's largest mangrove forest. Bengal has something for every traveller.</p>
+      <a href="#destinations" class="btn-primary">Find your experience ↗</a>
+    </div>
+  </section>
+
+  <section class="section planner-section" id="planner">
+    <div class="section-kicker">YOUR JOURNEY STARTS HERE</div>
+    <h2>Plan your <em>escape.</em></h2>
+    <p class="planner-subtitle">Create a simple travel plan and estimate your trip budget.</p>
+
+    <div class="planner-card">
+      <div class="planner-field">
+        <label for="tripDestination">WHERE DO YOU WANT TO GO?</label>
+        <select id="tripDestination">
+          <option value="">Choose destination</option>
+        </select>
+      </div>
+      <div class="planner-field">
+        <label for="tripDays">NUMBER OF DAYS</label>
+        <input type="number" id="tripDays" min="1" max="30" value="2">
+      </div>
+      <div class="planner-field">
+        <label for="tripBudget">BUDGET PER PERSON (₹)</label>
+        <input type="number" id="tripBudget" min="0" placeholder="e.g. 3000">
+      </div>
+      <button id="planButton" class="btn-primary planner-button">Create my trip ↗</button>
+      <div class="planner-result" id="plannerResult" hidden></div>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <div>
+      <div class="section-kicker">STAY INSPIRED</div>
+      <h2>Let Bengal <em>surprise you.</em></h2>
+      <p>Save your favourite destinations and start planning your next adventure.</p>
+    </div>
+    <a href="#destinations" class="btn-primary">Explore now ↗</a>
+  </section>
+</main>
+
+<footer class="footer">
+  <a href="#" class="brand footer-brand"><span class="brand-icon">R</span><span>RISHI<span class="brand-light"> TOURISM</span></span></a>
+  <p>Discover the beauty of West Bengal.</p>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> Rishi Tourism. All rights reserved.</span>
+    <a href="#home">Back to top ↑</a>
+  </div>
+</footer>
+
+<div class="modal" id="destinationModal" aria-hidden="true">
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+  <div class="modal-content">
+    <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+    <img id="modalImage" src="" alt="Destination">
+    <div class="modal-body">
+      <span class="section-kicker" id="modalCategory"></span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+      <div class="modal-info" id="modalInfo"></div>
+      <div class="modal-actions">
+        <a id="mapLink" class="btn-primary" href="#" target="_blank" rel="noopener">Open in Google Maps ↗</a>
+        <button id="favoriteButton" class="favorite-button">♡ Save destination</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script src="./script.js" defer></script>
+</body>
+</html>
